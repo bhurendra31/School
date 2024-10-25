@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himali</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Existing styles... */
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 640px; /* Adjust height as needed */
+            overflow: hidden;
+            margin-top: 10px; /* Space below the header */
+        }
+
+        .gallery-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .gallery-slide.active {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            position: absolute;
+            bottom: 50%;
+            left: 40%;
+            color: white;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            z-index: 1000;
+            user-select: none;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+        .hide-arrow {
+            visibility: hidden;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: 640px; /* Adjust height as needed */
+            overflow: hidden;
+            margin-top: 10px; /* Space below the header */
+            z-index: 0; /* Ensure the gallery slides remain below the arrows */
+        }
+        
+        /* About Section styles */
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            font-family: 'Georgia', serif;
+        }
+        .about-section h2 {
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        /* About principal styles */
+        .message{
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            font-family: 'Georgia', serif;
+            font-size: 36px;
+            color: #244079;
+            margin-left: 112px;
+        
+        }
+        .message-section h2 {
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+            
+        }
+        
+        .principal-section {
+            display: flex;
+            align-items: center;
+            padding: -0px 30px;
+            background-color: #f4f4f4;
+            font-family: 'Georgia', serif;
+        }
+
+        .principal-image {
+            flex: 1; /* Allow the image to take 1 part of the space */
+            margin-right: 20px; /* Space between image and text */
+        }
+        
+        .principal-image img {
+            width: 100%; /* Make the image responsive */
+            border-radius: 15px; /* Rounded corners */
+            max-width: 400px;
+            max-height: 600px;
+            margin-left: 15px;
+        }
+        .principal-info {
+            flex: 2; /* Allow text to take 2 parts of the space */
+        }
+        
+        .principal-info p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+           margin-bottom: 70px;
+        }
+        .principal-name {
+            margin-top: 20px; /* Space above the name */
+            font-size: 18px; /* Size of the name */
+            color: #333; /* Color for the name */
+            text-align: left; /* Center-align the text */
+            padding: 8px;
+            margin-left: 20px;
+        }
+
+
+        .infrastructure {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f0f8ff;
+            font-family: 'Georgia', serif;
+        }
+
+        .infrastructure h2 {
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+
+        /* InfraGallery container */
+.infragallery-container {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* InfraGallery scroll with images in a row */
+.infragallery-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll 30s linear infinite;
+}
+
+/* InfraGallery images */
+.infragallery-img {
+    width: 250px;
+    height: 250px;
+    margin: 0 10px;
+    border-radius: 15px; /* Rounded corners */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.infragallery-img:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Scroll animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* InfraGallery Section styles */
+.infragallery {
+    text-align: center;
+    background-color: #fff;
+    font-family: 'Georgia', serif;
+}
+
+.infragallery h2 {
+    font-size: 36px;
+    color: #244079;
+    margin-bottom: 20px;
+    font-family: "Georgia", serif;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cards to wrap to the next row */
+    justify-content: space-between; /* Space between cards */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff; /* White background for cards */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    width: calc(33.33% - 20px); /* Three cards in the upper row */
+    margin-bottom: 20px; /* Space below each card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text in card */
+}
+
+.card:nth-child(n+4) {
+    width: calc(50% - 20px); /* Two cards in the lower row */
+}
+
+.card-image {
+    width: 150px; /* Fixed width for images */
+    height: 150px; /* Fixed height for images */
+    border-radius: 50%; /* Circular image */
+    margin: 15px auto; /* Center image with margin */
+}
+.card-image1 {
+    width: 230px; /* Fixed width for images */
+    height: 150px; /* Fixed height for images */
+    border-radius: 50%; /* Circular image */
+    margin: 15px auto; /* Center image with margin */
+}
+
+.card-text {
+    padding: 10px; /* Padding around text */
+}
+
+.card h3 {
+    margin: 10px 0; /* Space above and below the title */
+    font-size: 20px; /* Font size for title */
+    color: #244079;
+}
+
+.card p {
+    font-size: 14px; /* Font size for description */
+    color: #555; /* Text color for description */
+}
+.card:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+.card-image:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+.card-image1:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.achievement-gallery {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+}
+
+.achievement-gallery h2 {
+    font-size: 36px;
+    color: #244079;
+    margin-bottom: 40px;
+    font-family: "Georgia", serif;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.achievement-item {
+    margin: 10px;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.achievement-item img {
+    width: 210px;
+    height: 210px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.achievement-item:hover img {
+    transform: scale(1.1);
+}
+
+.achievement-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(42, 42, 42, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.achievement-item:hover .achievement-caption {
+    opacity: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+
+
+
+</head>
+<body>
+    <!-- Header Open -->
+    <header class="header">
+        <div class="header-left">
+            <!-- School Logo -->
+            <img src="img/logo.jpg" alt="School Logo" class="logo">
+            
+            <!-- School Name and Subtitle -->
+            <div class="school-info">
+                <div class="school-name" id="school-name">Himali English Boa. School</div>
+                <div class="school-subtitle1">JanakpurDham-4, Dhanusha, Nepal</div>
+            </div>
+             <!-- App Drawer (left side) -->
+        <div class="app-drawer" id="drawer-toggle">
+            &#9776; <!-- Unicode for a menu (hamburger) icon -->
+        </div>
+        </div>
+    </header>
+
+    <!-- App Drawer -->
+    <div class="drawer" id="app-drawer">
+        <!-- Close Button -->
+        <div class="close-drawer" id="close-drawer">&times;</div>
+
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Features.html">Features</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Gallary.html">Gallary</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <b><p>Follow Us:</p></b><br>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+    <!-- Header Close -->
+
+    <div class="gallery-container fade-in">
+        <div class="gallery-slide active" style="background-image: url('img/image1.png');">
+            <div class="gallery-text"></div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('img/image2.png');">
+            <div class="gallery-text">Text for Image 2</div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('img/image3.png');">
+            <div class="gallery-text">Text for Image 3</div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('img/image4.png');">
+            <div class="gallery-text">Text for Image 4</div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('img/image5.png');">
+            <div class="gallery-text">Text for Image 5</div>
+        </div>
+        <div class="arrow arrow-left" id="prev-slide">&#10094;</div>
+        <div class="arrow arrow-right" id="next-slide">&#10095;</div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about-section fade-in" class="about-section fade-in">
+        <h2>ABOUT</h2>
+        <p>Welcome to Himali English Secondary Boarding School, where education meets excellence. Our school provides a nurturing environment where students can thrive academically, socially, and personally. With a dedicated team of educators, modern facilities, and a well-rounded curriculum, we aim to foster the holistic development of each student, preparing them to be confident, responsible, and compassionate individuals.<br><br>
+
+            At Himali, we believe that education is not just about imparting knowledge but about inspiring a lifelong love of learning. Our dynamic teaching methodologies combine traditional values with innovative approaches, ensuring that students receive a balanced education that encourages critical thinking, creativity, and collaboration.<br><br>
+            
+            Our diverse extracurricular programs, including arts, sports, and technology, allow students to discover their passions and talents outside the classroom. We emphasize the importance of both academic achievement and character development, helping students grow into well-rounded, ethical individuals who are prepared to face the challenges of the future.<br><br>
+            
+            With small class sizes and personalized attention, each student at Himali is encouraged to achieve their full potential. We pride ourselves on fostering a supportive community where every learner is valued and motivated to succeed.<br><br>
+            
+            Join us at Himali English Secondary Boarding School, where every step is a stride toward success, and every student is prepared to make their mark on the world.</p>
+    </div>
+
+    
+     <!-- Principal Section -->
+     <h2 class="message fade-in">MESSAGE FROM PRINCIPAL</h2>
+     <div id="principal-section" class="principal-section fade-in">
+        <div class="principal-image fade-in">
+            <img src="img/principal.png" alt="Principal" /> <!-- Update with your image path -->
+            <div class="principal-name fade-in">
+                <strong>Dr. John Doe</strong><br />
+                <span>Principal</span>
+            </div>
+        </div>
+
+        <div class="principal-info fade-in">
+            <p>We take pride in fostering a nurturing environment where students can thrive not only academically but also socially and personally. Our dedicated team of educators works tirelessly to ensure that each student receives the attention, guidance, and support they need to succeed. We emphasize both academic rigor and holistic development, encouraging students to participate in a wide range of extracurricular activities, from sports to arts and leadership opportunities.<br><br>
+                
+                At Himali, we are committed to developing well-rounded individuals equipped with the skills, values, and mindset needed to face the challenges of the future with confidence and compassion. We aim to create a learning community that inspires innovation, critical thinking, and a lifelong love for learning.<br><br>
+                
+                I invite you to explore all that Himali has to offer and join us on this journey toward excellence.<br><br>
+                
+                This message emphasizes the school’s commitment to holistic student development and gives a warm, welcoming tone from the Principal.</p>
+           
+        </div>
+    </div>
+      <!-- InfraGallery Section -->
+<div id="infragallery-section fade-in" class="infragallery fade-in"><br><br><br>
+    <h2>OUR INFRASTRUCTURE</h2>
+    <div class="infragallery-container fade-in">
+        <div class="infragallery-scroll">
+            <div class="infragallery-item">
+                <img src="img/img1.jpg" alt="Infrastructure 1" class="infragallery-img">
+                <br><br>
+                <div class="infragallery-label">Classroom</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img2.jpg" alt="Infrastructure 2" class="infragallery-img"><br><br>
+                <div class="infragallery-label">KG Classroom</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img3.jpg" alt="Infrastructure 3" class="infragallery-img"><br><br>
+                <div class="infragallery-label">School Compound</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img4.jpg" alt="Infrastructure 4" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Sports Ground</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img5.jpg" alt="Infrastructure 5" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Computer Lab 1</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img6.jpg" alt="Infrastructure 6" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Computer Lab 2</div>
+            </div>
+            <!-- Duplicate images for seamless scrolling -->
+            <div class="infragallery-item">
+                <img src="img/img1.jpg" alt="Infrastructure 1" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Classroom</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img2.jpg" alt="Infrastructure 2" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Classroom</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img3.jpg" alt="Infrastructure 3" class="infragallery-img"><br><br>
+                <div class="infragallery-label">School Compound</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img4.jpg" alt="Infrastructure 4" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Sports Ground</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img5.jpg" alt="Infrastructure 5" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Computer Lab 1</div>
+            </div>
+            <div class="infragallery-item">
+                <img src="img/img6.jpg" alt="Infrastructure 6" class="infragallery-img"><br><br>
+                <div class="infragallery-label">Computer Lab 2</div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<!-- Tronsportation Section -->
+<div id="infragallery-section fade-in" class="infragallery fade-in"><br><br><br><br><br><br>
+    <h2>TRANSPORTATION SERVICES</h2>
+    <div class="infragallery-container">
+        <div class="infragallery-scroll">
+            <div class="infragallery-item">
+                <img src="img/bus1.jpg" alt="Infrastructure 1" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/bus2.jpg" alt="Infrastructure 2" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/bus3.jpeg" alt="Infrastructure 3" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van1.jpg" alt="Infrastructure 4" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van2.jpg" alt="Infrastructure 5" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van4.jpg" alt="Infrastructure 6" class="infragallery-img">
+            </div>
+            <!-- Duplicate images for seamless scrolling -->
+            <div class="infragallery-item">
+                <img src="img/bus1.jpg" alt="Infrastructure 1" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/bus2.jpg" alt="Infrastructure 2" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/bus3.jpeg" alt="Infrastructure 3" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van1.jpg" alt="Infrastructure 4" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van2.jpg" alt="Infrastructure 5" class="infragallery-img">
+            </div>
+            <div class="infragallery-item">
+                <img src="img/van4.jpg" alt="Infrastructure 6" class="infragallery-img">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<!-- Card Section -->
+<div id="infragallery-section fade-in" class="infragallery fade-in"><br><br><br><br><br><br>
+    <h2>WHY YOU CHOOSE US ?</h2>
+    <div class="card-container fade-in">
+        <div class="card fade-in">
+            <img src="img/card1.jpg" alt="Profile 1" class="card-image">
+            <div class="card-text">
+                <h3>Quality Education</h3>
+                <p>We deliver high-quality education tailored to meet the diverse needs of our students through innovative teaching methods.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/card2.jpeg" alt="Profile 2" class="card-image1">
+            <div class="card-text">
+                <h3>	Holistic Development</h3>
+                <p>Our curriculum emphasizes academic excellence, character development, and creativity, with various extracurricular activities for personal growth.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/card3.avif" alt="Profile 3" class="card-image">
+            <div class="card-text">
+                <h3>Modern Infrastructure</h3>
+                <p>Our school is equipped with the latest technology and facilities, including classrooms, science labs, and recreational areas, fostering effective learning.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/card4.webp" alt="Profile 4" class="card-image">
+            <div class="card-text">
+                <h3>Parental Involvement</h3>
+                <p>We promote strong partnerships with families through regular communication and events, ensuring parents are engaged in their child’s education.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="img/card5.jpeg" alt="Profile 5" class="card-image">
+            <div class="card-text">
+                <h3>Community Engagement</h3>
+                <p>We encourage students to participate in service projects, nurturing their sense of social responsibility and active citizenship.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="infragallery-section fade-in" class="infragallery fade-in"><br><br><br><br><br><br>
+        <h2>ACHIEVEMENT GALLERY</h2>
+        <div class="gallery-row fade-in">
+            <div class="achievement-item fade-in">
+                <img src="img/ach1.jpg" alt="Achievement 1">
+                <div class="achievement-caption">Achievement 1</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach2.jpg" alt="Achievement 2">
+                <div class="achievement-caption">Achievement 2</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach3.jpg" alt="Achievement 3">
+                <div class="achievement-caption">Achievement 3</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach4.jpg" alt="Achievement 4">
+                <div class="achievement-caption">Achievement 4</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach5.jpg" alt="Achievement 5">
+                <div class="achievement-caption">Achievement 5</div>
+            </div>
+        </div>
+        <div class="gallery-row">
+            <div class="achievement-item">
+                <img src="img/ach6.jpg" alt="Achievement 6">
+                <div class="achievement-caption">Achievement 6</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach7.jpg" alt="Achievement 7">
+                <div class="achievement-caption">Achievement 7</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach8.jpg" alt="Achievement 8">
+                <div class="achievement-caption">Achievement 8</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach9.jpg" alt="Achievement 9">
+                <div class="achievement-caption">Achievement 9</div>
+            </div>
+            <div class="achievement-item">
+                <img src="img/ach10.jpg" alt="Achievement 10">
+                <div class="achievement-caption">Achievement 10</div>
+            </div>
+        </div>
+    </div><br><br><br><br><br>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-left">
+                    <h2><span>HIM</span>ALI</h2>
+                    <p>Our aim is to provide an Best and Quality education with us.</p>
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+    
+                <div class="footer-services">
+                    <h3>OUR SERVICES</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-links">
+                    <h3>USEFUL LINKS</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-contact">
+                    <h3>CONTACT US</h3>
+                    <div class="contact-info">
+                        <p>JanakpurDham-4, Kadam Chowk, Dhanusha, Nepal</p>
+                        <p>+977-9798690551 / 8691817051</p>
+                        <p>himaliinfo@example.com</p><br><br><br><br>
+
+                        <p>Design & Developed by:<a href="#"> ABC</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+      
+        <script>
+              // JavaScript for Drawer Open/Close
+        const drawerToggle = document.getElementById("drawer-toggle");
+        const appDrawer = document.getElementById("app-drawer");
+        const closeDrawer = document.getElementById("close-drawer");
+        const rightArrow = document.querySelector('.arrow-right');
+        
+        drawerToggle.addEventListener("click", () => {
+            appDrawer.classList.toggle("open");
+            rightArrow.classList.toggle("hide-arrow", appDrawer.classList.contains("open")); // Hide right arrow if drawer is open
+        });
+        
+        closeDrawer.addEventListener("click", () => {
+            appDrawer.classList.remove("open");
+            rightArrow.classList.remove("hide-arrow"); // Show right arrow when drawer is closed
+        });
+        
+        // Add active class to clicked menu item
+        const menuItems = document.querySelectorAll('#menu li');
+        
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all items
+                menuItems.forEach(i => i.classList.remove('active'));
+        
+                // Add active class to the clicked item
+                this.classList.add('active');
+            });
+        });
+        
+        // Slideshow Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.gallery-slide');
+        const totalSlides = slides.length;
+        
+        // Function to show a slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+        
+        // Show next slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        // Show previous slide
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        // Auto-play the slideshow (every 5 seconds)
+        let slideInterval = setInterval(nextSlide, 3000);
+        
+        // Event listeners for manual navigation
+        document.getElementById('next-slide').addEventListener('click', () => {
+            nextSlide();
+            clearInterval(slideInterval); // Reset the auto-play when navigating manually
+            slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow after manual navigation
+        });
+        
+        document.getElementById('prev-slide').addEventListener('click', () => {
+            prevSlide();
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 3000);
+        });
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+    
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+    
+            fadeInElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        </script>
+</body>
+</html>

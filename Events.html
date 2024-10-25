@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <style>  
+        .Academics-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f6f6;
+            font-family: 'Georgia', serif;
+            max-width: auto;
+        }
+        .Academics-section h2 {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 36px;
+           color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+        .Academics-section p {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+
+        .event-card {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 20px 50px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .event-card:hover {
+            transform: translateY(-8px); /* Slight lift effect */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+        }
+        
+        .event-image img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .event-content h3 {
+
+            font-size: 1.5em;
+            margin-bottom: 10px;
+           color: #244079;
+           font-family: "Georgia", serif;
+        }
+        
+        .event-content p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+     <!-- Header Open -->
+     <header class="header">
+        <div class="header-left">
+            <!-- School Logo -->
+            <img src="img/logo.jpg" alt="School Logo" class="logo">
+            
+            <!-- School Name and Subtitle -->
+            <div class="school-info">
+                <div class="school-name" id="school-name">Himali English Boa. School</div>
+                <div class="school-subtitle1">JanakpurDham-4, Dhanusha, Nepal</div>
+            </div>
+             <!-- App Drawer (left side) -->
+        <div class="app-drawer" id="drawer-toggle">
+            &#9776; <!-- Unicode for a menu (hamburger) icon -->
+        </div>
+        </div> 
+    </header>
+
+    <!-- App Drawer -->
+    <div class="drawer" id="app-drawer">
+        <!-- Close Button -->
+        <div class="close-drawer" id="close-drawer">&times;</div>
+
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <b><p>Follow Us:</p></b><br>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+ 
+    <div id="Academics-section" class="Academics-section">
+        <h2>SCHOOL EVENTS</h2>
+        <p>At Himali English Secondary Boarding School, we believe in the holistic development of our students by nurturing not only academic excellence but also creativity, teamwork, and leadership through various events and activities. Our school regularly organizes a wide array of events that enrich the student experience, foster community spirit, and provide students with opportunities to showcase their talents and skills.
+        </p>
+    </div>
+
+    <div class="event-card" >
+        <div class="event-image">
+            <img src="img/sprt.jpg" alt="Sports Day">
+        </div>
+        <div class="event-content">
+        <h3><i class="fas fa-futbol"></i> ANNUAL SPORTS DAY</h3>
+        <p>The Annual Sports Day is a highly anticipated event where students from all grade levels participate in athletic competitions, including races, team sports, and fun activities. This event promotes physical fitness, sportsmanship, and team spirit.</p>
+        </div>
+    </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/cul.webp" alt="Cultural Program">
+            </div>
+            <div class="event-content">
+                <h3><i class="fas fa-theater-masks"></i> CULTURAL PROGRAM</h3>
+                <p>Our Cultural Program celebrates the diverse traditions and cultures represented in our school community. Students perform dances, songs, and dramas that highlight Nepal’s rich cultural heritage, while also celebrating global cultures.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/sci.jpg" alt="Sports Day">
+            </div>
+            <div class="event-content">
+            <h3><i class="fas fa-flask"></i>SCIENCE EXHIBITION</h3>
+            <p>Organized annually, the Science Exhibition allows students to present their innovative projects and experiments. This event encourages critical thinking, problem-solving, and creativity, as students demonstrate their scientific knowledge in fields such as physics, chemistry, and biology.</p>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/music.jpg" alt="Sports Day">
+            </div>
+            <div class="event-content">
+            <h3><i class="fas fa-music"></i> ART & MUSIC SHOW</h3>
+            <p>Showcasing the artistic talents of our students, the Art and Music Show is an event where students display their creative works, including paintings, sculptures, and musical performances. This event highlights the importance of the arts in education.</p>
+            </div>
+        </div>
+    
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="img/debate.webp" alt="Cultural Program">
+                </div>
+                <div class="event-content">
+                    <h3><i class="fas fa-comments"></i> DEBATE & QUIZ COMPETITIONS</h3>
+                    <p>To enhance students’ critical thinking and communication skills, we regularly organize debate and quiz competitions. These events challenge students to engage in intellectual discussions and test their knowledge across various subjects.</p>
+                </div>
+            </div>
+    
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="img/annual.jpg" alt="Sports Day">
+                </div>
+                <div class="event-content">
+                <h3><i class="fas fa-award"></i>ANNUAL DAY CELEBRATION</h3>
+                <p>The Annual Day Celebration is a grand event where students and faculty come together to celebrate the achievements of the school. It features speeches, award ceremonies, and a variety of performances by students, making it one of the highlights of the academic year.</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="img/envi.png" alt="Cultural Program">
+                </div>
+                <div class="event-content">
+                    <h3><i class="fas fa-leaf"></i> ENVIRONMENTAL AWARENESS CAMPAIGN</h3>
+                    <p>In line with our commitment to sustainability, our school organizes environmental awareness campaigns, such as tree planting drives, recycling initiatives, and clean-up programs. These events teach students the importance of environmental conservation and their role in protecting the planet.</p>
+                </div>
+            </div>
+    
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="img/fest.png" alt="Sports Day">
+                </div>
+                <div class="event-content">
+                <h3><i class="fas fa-futbol"></i>FESTICALS & CELEBRATIONS</h3>
+                <p>as Dashain, Tihar, and Holi. These celebrations bring joy and help students learn about cultural values and traditions while fostering unity and respect for diversity.
+                </p>
+                </div>
+            </div><br><br><br><br>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2><span>HIM</span>ALI</h2>
+                <p>Our aim is to provide an Best and Quality education with us.</p>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-services">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Features.html">Features</a></li>
+                    <li><a href="Academics.html">Academics</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Gallary.html">Gallary</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Features.html">Features</a></li>
+                    <li><a href="Academics.html">Academics</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Gallary.html">Gallary</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h3>CONTACT US</h3>
+                <div class="contact-info">
+                    <p>JanakpurDham-4, Kadam Chowk, Dhanusha, Nepal</p>
+                    <p>+977-9798690551 / 8691817051</p>
+                    <p>himaliinfo@example.com</p><br><br><br><br>
+    
+                    <p>Design & Developed by:<a href="#"> ABC</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Drawer Open/Close
+    const drawerToggle = document.getElementById("drawer-toggle");
+    const appDrawer = document.getElementById("app-drawer");
+    const closeDrawer = document.getElementById("close-drawer");
+    const rightArrow = document.querySelector('.arrow-right');
+    
+    drawerToggle.addEventListener("click", () => {
+      appDrawer.classList.toggle("open");
+      rightArrow.classList.toggle("hide-arrow", appDrawer.classList.contains("open")); // Hide right arrow if drawer is open
+    });
+    
+    closeDrawer.addEventListener("click", () => {
+      appDrawer.classList.remove("open");
+      rightArrow.classList.remove("hide-arrow"); // Show right arrow when drawer is closed
+    });
+    
+    // Add active class to clicked menu item
+    const menuItems = document.querySelectorAll('#menu li');
+    
+    menuItems.forEach(item => {
+      item.addEventListener('click', function() {
+          // Remove active class from all items
+          menuItems.forEach(i => i.classList.remove('active'));
+    
+          // Add active class to the clicked item
+          this.classList.add('active');
+      });
+    });
+    
+    // Slideshow Functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.gallery-slide');
+    const totalSlides = slides.length;
+    
+    // Function to show a slide
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+      });
+    }
+    
+    // Show next slide
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+    
+    // Show previous slide
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(currentSlide);
+    }
+    
+    // Auto-play the slideshow (every 5 seconds)
+    let slideInterval = setInterval(nextSlide, 3000);
+    
+    // Event listeners for manual navigation
+    document.getElementById('next-slide').addEventListener('click', () => {
+      nextSlide();
+      clearInterval(slideInterval); // Reset the auto-play when navigating manually
+      slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow after manual navigation
+    });
+    
+    document.getElementById('prev-slide').addEventListener('click', () => {
+      prevSlide();
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 3000);
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

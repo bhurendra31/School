@@ -1,0 +1,194 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Roboto', sans-serif;
+}
+
+body {
+font-family: "Poppins", sans-serif;
+background-color: #f4f4f4;
+}
+
+footer {
+background-color: #222;
+color: #bbb;
+padding: 50px 0;
+text-align: left;
+
+}
+
+.footer-container {
+display: grid;
+grid-template-columns: repeat(4, 1fr); /* Four columns layout */
+max-width: 1200px;
+margin: auto;
+padding: 0 20px;
+gap: 20px; /* Add gap between columns */
+}
+
+.footer-left h2 {
+color: white;
+font-size: 28px;
+font-family: 'Roboto', sans-serif; /* Set Roboto font for "Our Services" */
+font-weight: bold;
+
+}
+
+.footer-left h2 span {
+color: #00bfff; /* Light blue */
+}
+
+.footer-left p {
+margin: 8px 0;
+line-height: 1.5;
+
+
+}
+
+.footer-left h4 {
+margin: 8px 0;
+color: white;
+font-size: 18px;
+margin-top: 30px;
+}
+
+.social-icons {
+display: flex;
+gap: 15px;
+}
+
+.social-icons a {
+color: #00bfff;
+border: 1px solid #00bfff;
+padding: 10px;
+border-radius: 0%;
+display: inline-block;
+transition: 0.3s;
+}
+
+.social-icons a:hover {
+background-color: #00bfff;
+color: white;
+}
+
+.footer-services, .footer-links, .footer-contact {
+color: white;
+}
+
+.footer-services ul, .footer-links ul {
+list-style: none;
+margin: 20px 0;
+}
+
+.footer-services ul li a, .footer-links ul li a {
+color: #bbb;
+text-decoration: none;
+line-height: 2.5;
+transition: 0.3s;
+}
+
+.footer-services ul li a:hover, .footer-links ul li a:hover {
+color: #00bfff;
+}
+
+.footer-contact h3 {
+margin-bottom: 15px;
+}
+
+.contact-info p {
+margin: 10px 0;
+}
+
+footer h3 {
+margin-bottom: 15px;
+color: #fff;
+}
+
+.footer-services ul li::before, .footer-links ul li::before {
+content: "\003E"; /* Unicode for '>' */
+margin-right: 10px;
+color: #bbb; /* Color of the arrow */
+font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* <script>
+// JavaScript for Drawer Open/Close
+const drawerToggle = document.getElementById("drawer-toggle");
+const appDrawer = document.getElementById("app-drawer");
+const closeDrawer = document.getElementById("close-drawer");
+const rightArrow = document.querySelector('.arrow-right');
+
+drawerToggle.addEventListener("click", () => {
+appDrawer.classList.toggle("open");
+rightArrow.classList.toggle("hide-arrow", appDrawer.classList.contains("open")); // Hide right arrow if drawer is open
+});
+
+closeDrawer.addEventListener("click", () => {
+appDrawer.classList.remove("open");
+rightArrow.classList.remove("hide-arrow"); // Show right arrow when drawer is closed
+});
+
+// Add active class to clicked menu item
+const menuItems = document.querySelectorAll('#menu li');
+
+menuItems.forEach(item => {
+item.addEventListener('click', function() {
+  // Remove active class from all items
+  menuItems.forEach(i => i.classList.remove('active'));
+
+  // Add active class to the clicked item
+  this.classList.add('active');
+});
+});
+
+// Slideshow Functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.gallery-slide');
+const totalSlides = slides.length;
+
+// Function to show a slide
+function showSlide(index) {
+slides.forEach((slide, i) => {
+  slide.classList.toggle('active', i === index);
+});
+}
+
+// Show next slide
+function nextSlide() {
+currentSlide = (currentSlide + 1) % totalSlides;
+showSlide(currentSlide);
+}
+
+// Show previous slide
+function prevSlide() {
+currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+showSlide(currentSlide);
+}
+
+// Auto-play the slideshow (every 5 seconds)
+let slideInterval = setInterval(nextSlide, 3000);
+
+// Event listeners for manual navigation
+document.getElementById('next-slide').addEventListener('click', () => {
+nextSlide();
+clearInterval(slideInterval); // Reset the auto-play when navigating manually
+slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow after manual navigation
+});
+
+document.getElementById('prev-slide').addEventListener('click', () => {
+prevSlide();
+clearInterval(slideInterval);
+slideInterval = setInterval(nextSlide, 3000);
+});
+
+</script> */

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .Academics-section {
+            text-align: left;
+            padding: 50px 20px;
+            font-family: "Georgia", serif;
+            max-width: auto;
+        }
+        .Academics-section h2 {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+        .Academics-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blue-bullets {
+            list-style-type: disc;
+            padding-left: 130px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            font-size: 18px;
+        }
+        
+        .blue-bullets li {
+            color: #333;
+        }
+        
+        .blue-bullets li::marker {
+            color: blue;
+        }
+
+        /* Style for Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .gallery-item img {
+            width: 300px;
+            height: 300px;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add active class to make items visible on scroll */
+        .gallery-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+<body>
+     <!-- Header Open -->
+     <header class="header">
+        <div class="header-left">
+            <!-- School Logo -->
+            <img src="img/logo.jpg" alt="School Logo" class="logo">
+            
+            <!-- School Name and Subtitle -->
+            <div class="school-info">
+                <div class="school-name" id="school-name">Himali English Boa. School</div>
+                <div class="school-subtitle1">JanakpurDham-4, Dhanusha, Nepal</div>
+            </div>
+             <!-- App Drawer (left side) -->
+        <div class="app-drawer" id="drawer-toggle">
+            &#9776; <!-- Unicode for a menu (hamburger) icon -->
+        </div>
+        </div> 
+    </header>
+
+     <!-- App Drawer -->
+     <div class="drawer" id="app-drawer">
+        <!-- Close Button -->
+        <div class="close-drawer" id="close-drawer">&times;</div>
+
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Features.html">Features</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Gallary.html">Gallary</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <b><p>Follow Us:</p></b><br>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+ <!-- About Section -->
+ <div id="Academics-section" class="Academics-section">
+    <h2>PICTURE GALLERY</h2>
+    <p>The picture gallery of Himali English Secondary Boarding School offers a visual journey into the vibrant life of the school. This curated collection of images captures the essence of the school’s activities, infrastructure, and cultural events, reflecting the spirit of academic excellence and extracurricular engagement. Each photograph showcases the school’s well-rounded environment, offering a glimpse into various aspects of student life, learning facilities, and community interactions.
+    </p><br><br>
+    <ul class="blue-bullets">
+        <li>Fill out the application form available on the school's Admission Cell.</li>
+        <li>Submit the required documents (birth certificate, previous academic records, etc.).</li>
+        <li>Pay the application fee at the school's admission office.</li>
+        <li>Schedule and attend the entrance exam or interview (if applicable).</li>
+        <li>Wait for the admission decision notification via message or phone call.</li>
+        <li>Confirm your admission by submitting the necessary fees and completing any additional formalities.</li>
+        <li>Collect the admission confirmation letter and join the school on the designated start date.</li>
+    </ul><br><br>
+    <p>This gallery not only serves as a way for parents and visitors to see the facilities but also preserves memories of important milestones in the school’s history. Each photograph is a testimony to the school’s mission of providing quality education, ensuring holistic development, and creating a supportive environment for all students.
+<br><br>
+Through this collection, the gallery becomes a window into the daily life and accomplishments of the students, staff, and the larger school community, bringing the essence of Himali English Secondary Boarding School to life.</p>
+    </div>
+
+
+
+    <!-- Gallery Section Start -->
+    <section class="gallery">
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/ach1.jpg" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/ach5.jpg" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/ach3.jpg" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/fest.png" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/envi.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="img/image1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/admi.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/lion.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/vision.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/sprt.jpg" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 6"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 1"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 2"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 3"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 4"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 5"></div>
+        <div class="gallery-item"><img src="img/abt1.png" alt="Gallery Image 6"></div>
+
+    </section>
+    <!-- Gallery Section End -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2><span>HIM</span>ALI</h2>
+                <p>Our aim is to provide an Best and Quality education with us.</p>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-services">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-links">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Features.html">Features</a></li>
+                    <li><a href="Academics.html">Academics</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Gallary.html">Gallary</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-contact">
+                <h3>CONTACT US</h3>
+                <div class="contact-info">
+                    <p>JanakpurDham-4, Kadam Chowk, Dhanusha, Nepal</p>
+                    <p>+977-9798690551 / 8691817051</p>
+                    <p>himaliinfo@example.com</p><br><br><br><br>
+    
+                    <p>Design & Developed by:<a href="#"> ABC</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Drawer Open/Close
+        const drawerToggle = document.getElementById("drawer-toggle");
+        const appDrawer = document.getElementById("app-drawer");
+        const closeDrawer = document.getElementById("close-drawer");
+
+        drawerToggle.addEventListener("click", () => {
+            appDrawer.classList.toggle("open");
+        });
+
+        closeDrawer.addEventListener("click", () => {
+            appDrawer.classList.remove("open");
+        });
+
+        // Scroll Reveal Animation
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        function revealGallery() {
+            const revealPoint = window.innerHeight - 100;
+
+            galleryItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+
+                if (itemTop < revealPoint) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealGallery);
+    </script>
+</body>
+</html>

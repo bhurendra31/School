@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll when drawer is open */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000; /* Underline at the bottom */
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .school-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .school-name {
+            font-size: 40px;
+            margin-right: 80%;
+            font-weight: bold;
+            color: #2CA3FF;
+            animation: easeInOut 2s ease-in-out infinite alternate;
+            cursor: pointer; /* Make clickable */
+        }
+        .school-subtitle {
+            font-size: 25px;
+        }
+        .school-subtitle1 {
+            margin-top: 1%;
+            font-size: 12px;
+        }
+        
+        .app-drawer {
+            font-size: 60px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        /* App Drawer styles */
+        .drawer {
+            position: fixed;
+            top: 10px;
+            right: -300px; /* Hidden off-screen initially */
+            width: 300px;
+            height: 100%;
+            background-color: rgb(165, 222, 255);
+            transition: right 0.3s ease; /* Smooth slide in */
+            padding: 20px;
+            color: rgb(0, 0, 0);
+            z-index: 1000;
+        }
+        .drawer.open {
+            right: 0; /* Slide in from the right */
+        }
+        .drawer ul {
+            list-style-type: none;
+            margin: 50px 0;
+            padding: 0;
+        }
+        .drawer ul li {
+            margin: 20px 0;
+        }
+        .drawer ul li a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .drawer ul li a:hover {
+            color: #2CA3FF;
+        }
+
+        .drawer .social-media {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+        }
+        .drawer .social-media a {
+            color: rgb(0, 0, 0);
+            margin-right: 10px;
+            font-size: 30px;
+        }
+        .drawer .social-media a:hover {
+            color: #2CA3FF;
+        }
+        .app-drawer:hover {
+            transform: rotate(90deg); /* Rotate on hover */
+        }
+        .drawer ul li.active a {
+            color: #2CA3FF; /* Change the color for the active item */
+            font-weight: bold; /* Optional: make the active item bold */
+        }
+
+
+        /* Close button styles */
+        .close-drawer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            transition: transform 0.3s ease;
+        }
+        .close-drawer:hover {
+            transform: rotate(180deg); /* Scale on hover */
+            opacity: 0.8;
+        }
+
+        .drawer ul li.active a {
+            color: #2CA3FF; /* Change the color for the active item */
+            font-weight: bold; /* Optional: make the active item bold */
+        }
+
+        /* Keyframes for the animation */
+        @keyframes easeInOut {
+            0% {
+                transform: scale(1); /* Default size */
+                opacity: 0.5; /* Slightly faded */
+                color: #000000;
+            }
+            50% {
+                transform: scale(1.2); /* Slightly larger */
+                opacity: 1;
+                color: #007BFF;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+                color: #ffffff;
+            }
+        }  
+
+    </style>
+</head>
+<body>
+    <!-- Header Open -->
+    <header class="header">
+        <div class="header-left">
+            <!-- School Logo -->
+            <img src="img/logo.jpg" alt="School Logo" class="logo">
+            
+            <!-- School Name and Subtitle -->
+            <div class="school-info">
+                <div class="school-name" id="school-name">HIMALI</div>
+                <div class="school-subtitle">Eng. Sec. Boa. School</div>
+                <div class="school-subtitle1">JanakpurDham-4, Dhanusha, Nepal</div>
+            </div>
+        </div>
+        
+        <!-- App Drawer (left side) -->
+        <div class="app-drawer" id="drawer-toggle">
+            &#9776; <!-- Unicode for a menu (hamburger) icon -->
+        </div>
+    </header>
+
+    <!-- App Drawer -->
+    <div class="drawer" id="app-drawer">
+        <!-- Close Button -->
+        <div class="close-drawer" id="close-drawer">&times;</div>
+
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#About.html">About</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="#">Achievements</a></li>
+            <li><a href="#">News & Events</a></li>
+            <li><a href="#">Gallary</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <b><p>Follow Us:</p></b><br>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+   
+
+    <script>
+        // JavaScript for Drawer Open/Close
+        const drawerToggle = document.getElementById("drawer-toggle");
+        const appDrawer = document.getElementById("app-drawer");
+        const closeDrawer = document.getElementById("close-drawer");
+        const rightArrow = document.querySelector('.arrow-right');
+
+        drawerToggle.addEventListener("click", () => {
+            appDrawer.classList.toggle("open");
+            rightArrow.classList.toggle("hide-arrow", appDrawer.classList.contains("open")); // Hide right arrow if drawer is open
+        });
+
+        closeDrawer.addEventListener("click", () => {
+            appDrawer.classList.remove("open");
+            rightArrow.classList.remove("hide-arrow"); // Show right arrow when drawer is closed
+        });
+
+        // Add active class to clicked menu item
+    const menuItems = document.querySelectorAll('#menu li');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            // Remove active class from all items
+            menuItems.forEach(i => i.classList.remove('active'));
+
+            // Add active class to the clicked item
+            this.classList.add('active');
+        });
+    });
+
+
+    </script>
+    </body>
+    </html>

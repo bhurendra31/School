@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+        .about-section {
+            text-align: justify;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            font-family: 'Georgia', serif;
+        }
+        .about-section h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            font-family: "Georgia", serif;
+        }
+        .about-section p {
+
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+
+        .mission-vision-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px; /* Space between columns */
+            margin: 20px 0;
+        }
+        
+        .mission-vision-column {
+            flex: 1; /* Distribute equal width to columns */
+        }
+        
+        .image-column {
+            max-width: 30%; /* Limit the width of the image column */
+        }
+        
+        .image-column img {
+            width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: add border radius for styling */
+        }
+        
+        .text-column {
+            flex: 2; /* Make the text columns take up more space */
+        }
+        
+        @media (max-width: 768px) {
+            .mission-vision-container {
+                flex-direction: column; /* Stack columns on smaller screens */
+            }
+        
+            .image-column {
+                max-width: 100%; /* Full width for image on mobile */
+                margin-bottom: 20px;
+            }
+        }
+
+        .about-section2 {
+            text-align: justify;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            font-family: 'Georgia', serif;
+        }
+        .about-section2 h2 {
+            text-align: left;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            margin-top: 45px;
+            margin-left: 115px;
+            font-family: "Georgia", serif;
+        }
+        .about-section2 p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 700px;
+            margin-top: 30px;
+            margin-left: 115px;
+        }
+
+
+        .about-section3 {
+            text-align: justify;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            font-family: 'Georgia', serif;
+        }
+        
+        .about-section3 h2 {
+            text-align: left;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            margin-left: 110px;
+            margin-top: 45px;
+            font-family: "Georgia", serif;
+        }
+        
+        .about-section3 p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 700px;
+            margin-top: 30px;
+            margin-left: 110px;
+        }
+
+        .about-section4 {
+            text-align: justify;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            font-family: 'Georgia', serif;
+        }
+        
+        .about-section4 h2 {
+            text-align: left;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 20px;
+            margin-left: 110px;
+            margin-top: 45px;
+            font-family: "Georgia", serif;
+        }
+
+        .image-column1 img {
+            width: 105%; /* Make the image responsive */
+            height: 250; /* Maintain aspect ratio */
+            border-radius: 5px; /* Optional: add border radius for styling */
+        }
+        
+        .about-section4 p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333;
+            max-width: 700px;
+            margin-top: 30px;
+            margin-left: 110px;
+        }
+    
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-right: 40px;
+            margin-left: 40px;
+            background-color: #f4f4f4;
+        }
+        
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 0%px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-basis: 30%;
+            text-align: center;
+        }
+        
+        .card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-align: left;
+            color: #244079;
+            font-family: "Georgia", serif;
+        }
+        
+        .card p {
+            font-size: 1em;
+            color: #555;
+            margin-top: 20px;
+            text-align: left;
+            margin-left: auto;
+            
+        }
+
+        .silent {
+            text-align: justify;
+            padding: 50px 20px;
+            background-color: #ffffff;
+            font-family: 'Georgia', serif;
+        }
+        .silent h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #244079;
+            margin-bottom: 40px;
+            font-family: "Georgia", serif;
+        }
+
+        .blue-bullets {
+            list-style-type: disc;
+            padding-left: 170px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .blue-bullets li {
+            color: #333;
+        }
+        
+        .blue-bullets li::marker {
+            color: blue;
+        }
+        
+    </style>
+</head>
+<body>
+ <!-- Header Open -->
+<header class="header">
+    <div class="header-left">
+        <!-- School Logo -->
+        <img src="img/logo.jpg" alt="School Logo" class="logo">
+        
+        <!-- School Name and Subtitle -->
+        <div class="school-info">
+            <div class="school-name" id="school-name">Himali English Boa. School</div>
+            <div class="school-subtitle1">JanakpurDham-4, Dhanusha, Nepal</div>
+        </div>
+         <!-- App Drawer (left side) -->
+    <div class="app-drawer" id="drawer-toggle">
+        &#9776; <!-- Unicode for a menu (hamburger) icon -->
+    </div>
+    </div> 
+ </header>
+
+    <!-- App Drawer -->
+    <div class="drawer" id="app-drawer">
+        <!-- Close Button -->
+        <div class="close-drawer" id="close-drawer">&times;</div>
+
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Features.html">Features</a></li>
+            <li><a href="Academics.html">Academics</a></li>
+            <li><a href="Events.html">Events</a></li>
+            <li><a href="Gallary.html">Gallary</a></li>
+            <li><a href="Contact.html">Contact Us</a></li>
+        </ul>
+        <div class="social-media">
+            <b><p>Follow Us:</p></b><br>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+     <!-- About Section -->
+     <div id="about-section" class="about-section">
+        <h2>ABOUT</h2>
+        <p>Himali English Secondary Boarding School
+
+            Located in the heart of JanakpurDham, at Kadam Chowk, Dhanusha, Nepal, Himali English Secondary Boarding School has been a pillar of educational excellence since its establishment in 2049 BS. As a private, boarding institution, we provide a holistic K-12 educational experience, catering to students from elementary through high school levels. Our commitment to nurturing academic and personal growth in a supportive environment has made us one of the region’s most reputable educational institutions.
+            
+            Would you like to add any additional details, such as special programs, extracurricular activities
+        </p>
+        </div>
+    
+    <div id="about-section" class="about-section2">
+    <div class="mission-vision-container">
+        <div class="mission-vision-column image-column">
+            <img src="img/mission.png" alt="School Image">
+        </div>
+        <div class="mission-vision-column text-column">
+            <h2 class="ms">MISSION</h2>
+            <p>
+                At Himali English Secondary Boarding School, our mission is to deliver high-quality education that empowers students to reach their full potential. We are dedicated to fostering an environment of academic excellence, character development, and lifelong learning.
+            </p>
+        </div>
+    </div>
+    </div>
+
+    <div id="about-section" class="about-section3">
+        <!-- Vision Section (Text on the left, image on the right) -->
+        <div class="mission-vision-container">
+            <div class="mission-vision-column text-column">
+                <h2 class="ms">VISION</h2>
+                <p>
+                    Our vision is to create a bright future for our students, equipping them with the skills, knowledge, and values they need to succeed in a rapidly changing world. We aim to nurture well-rounded individuals who will make a positive impact in their communities and beyond.
+                </p>
+            </div>
+            <div class="mission-vision-column image-column">
+                <img src="img/vision.png" alt="Vision Image">
+            </div>
+        </div>
+    </div>
+
+    <div id="about-section" class="about-section4">
+        <!-- Vision Section (Text on the left, image on the right) -->
+        <div class="mission-vision-container">
+            <div class="mission-vision-column text-column">
+                <h2 class="ms">INFRASTRUCTURE</h2>
+                <p>
+                    The infrastructure of Himali English Secondary Boarding School is designed to support holistic education, featuring modern classrooms, well-equipped labs, and ample recreational facilities.</p>
+            </div>
+            <div class="mission-vision-column image-column1">
+                <img src="img/infra.jpg" alt="infra Image">
+            </div>
+        </div><br><br>
+    
+
+     <!-- Cards Section -->
+     <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>Modern Classrooms</h3>
+            <p>Modern classrooms at Himali English Secondary Boarding School are designed to create an engaging and conducive learning environment. Each classroom is spacious, well-lit, and equipped with the latest teaching aids, including projectors and smart boards. The ergonomic seating ensures students’ comfort, fostering better concentration and participation. Interactive learning is encouraged through technology integration, making lessons dynamic and more impactful.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="card">
+            <h3>Physics Lab</h3>
+            <p>SThe Physics Lab at Himali English Secondary Boarding School is fully equipped with modern instruments to facilitate hands-on learning and experimentation. Students have access to various apparatus such as oscilloscopes, lenses, prisms, and electrical circuits to explore fundamental principles of physics. The lab is designed to provide a safe and interactive environment where students can conduct experiments related to mechanics, optics, electromagnetism, and thermodynamics. Experienced instructors guide students through practical applications of theoretical concepts, fostering a deeper understanding of the subject.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="card">
+            <h3>Computer Lab</h3>
+            <p>The computer lab at Himali English Secondary Boarding School is equipped with the latest hardware and software to facilitate effective learning in technology. Students have access to high-speed internet and modern computers, enabling them to engage in coding, research, and digital projects. The lab is designed to support IT education and practical applications, ensuring students are well-prepared for the digital age. Regular maintenance and updates are performed to keep the technology current.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="card">
+            <h3>Library</h3>
+            <p>The library at Himali English Secondary Boarding School is a hub of knowledge, offering a diverse collection of books, reference materials, and digital resources. It provides students with access to academic texts, literature, and journals to support their studies and personal growth. Equipped with comfortable seating and a quiet ambiance, the library encourages a culture of reading and research. It also integrates modern technology, allowing students to access e-books and online databases for broader learning opportunities.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="card">
+            <h3>Playground</h3>
+            <p>The playground at Himali English Secondary Boarding School offers a large, open space designed for physical activities and sports. It provides facilities for games like football, basketball, and volleyball, encouraging students to stay active and develop teamwork skills. The well-maintained area promotes a healthy, outdoor environment for recreation and relaxation. Students of all ages can engage in both organized sports and free play, enhancing their physical fitness and social interaction.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="card">
+            <h3>Art and Music Rooms</h3>
+            <p>The Art and Music Rooms at Himali English Secondary Boarding School are designed to foster creativity and artistic expression among students. These rooms are equipped with various instruments, art supplies, and tools to support both music and visual arts education. Students can explore their talents in painting, sculpture, vocal training, and instrumental music under the guidance of experienced instructors. The spaces provide a nurturing environment for creative growth and cultural appreciation.</p>
+        </div>
+         <!-- Card 7 -->
+        <div class="card">
+            <h3>Chemistry Lab</h3>
+            <p>The chemistry lab at Himali English Secondary Boarding School is equipped with modern apparatus and safety equipment, providing students with a hands-on learning environment. It allows for practical experiments that reinforce theoretical knowledge, fostering a deeper understanding of chemical reactions and principles. The lab is designed to accommodate group activities, encouraging collaboration among students. Safety measures are in place to ensure a secure and educational experience for all learners.</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="about-section" class="silent">
+    <h2>Our Silent Features</h2>
+    <ul class="blue-bullets">
+        <li>Highly qualified and experienced faculty</li>
+        <li>Well-equipped science and computer laboratories</li>
+        <li>Extensive library with digital and physical resources</li>
+        <li>Interactive learning environment with smart classrooms</li>
+        <li>Focus on extracurricular activities for holistic development</li>
+        <li>Safe and secure campus with modern facilities</li>
+        <li>Personalized learning plans tailored to each student's needs and strengths</li>
+<li>Comprehensive character development programs, including leadership and teamwork</li>
+<li>Access to a wide range of extracurricular activities, including sports, arts, and clubs</li>
+<li>State-of-the-art technology integration in all subjects for enhanced learning</li>
+<li>Regular workshops and seminars by industry professionals to inspire students</li>
+<li>Strong emphasis on community service and social responsibility initiatives</li>
+<li>Parent-teacher collaboration to support student progress and well-being</li>
+<li>Positive and nurturing environment that fosters emotional and social growth</li>
+<li>Scholarship programs available for academically gifted students</li>
+    </ul><br><br><br><br><br>
+</div>
+    
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h2><span>HIM</span>ALI</h2>
+            <p>Our aim is to provide an Best and Quality education with us.</p>
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-services">
+            <h3>OUR SERVICES</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-links">
+            <h3>USEFUL LINKS</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About</a></li>
+                        <li><a href="Features.html">Features</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="Events.html">Events</a></li>
+                        <li><a href="Gallary.html">Gallary</a></li>
+                        <li><a href="Contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>CONTACT US</h3>
+            <div class="contact-info">
+                <p>JanakpurDham-4, Kadam Chowk, Dhanusha, Nepal</p>
+                <p>+977-9798690551 / 8691817051</p>
+                <p>himaliinfo@example.com</p><br><br><br><br>
+
+                <p>Design & Developed by:<a href="#"> ABC</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JavaScript for Drawer Open/Close
+const drawerToggle = document.getElementById("drawer-toggle");
+const appDrawer = document.getElementById("app-drawer");
+const closeDrawer = document.getElementById("close-drawer");
+const rightArrow = document.querySelector('.arrow-right');
+
+drawerToggle.addEventListener("click", () => {
+  appDrawer.classList.toggle("open");
+  rightArrow.classList.toggle("hide-arrow", appDrawer.classList.contains("open")); // Hide right arrow if drawer is open
+});
+
+closeDrawer.addEventListener("click", () => {
+  appDrawer.classList.remove("open");
+  rightArrow.classList.remove("hide-arrow"); // Show right arrow when drawer is closed
+});
+
+// Add active class to clicked menu item
+const menuItems = document.querySelectorAll('#menu li');
+
+menuItems.forEach(item => {
+  item.addEventListener('click', function() {
+      // Remove active class from all items
+      menuItems.forEach(i => i.classList.remove('active'));
+
+      // Add active class to the clicked item
+      this.classList.add('active');
+  });
+});
+
+// Slideshow Functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.gallery-slide');
+const totalSlides = slides.length;
+
+// Function to show a slide
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+  });
+}
+
+// Show next slide
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+
+// Show previous slide
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+}
+
+// Auto-play the slideshow (every 5 seconds)
+let slideInterval = setInterval(nextSlide, 3000);
+
+// Event listeners for manual navigation
+document.getElementById('next-slide').addEventListener('click', () => {
+  nextSlide();
+  clearInterval(slideInterval); // Reset the auto-play when navigating manually
+  slideInterval = setInterval(nextSlide, 3000); // Restart the slideshow after manual navigation
+});
+
+document.getElementById('prev-slide').addEventListener('click', () => {
+  prevSlide();
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 3000);
+});
+
+</script>
+    </body>
+    </html>
